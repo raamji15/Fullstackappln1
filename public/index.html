@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Reimbursement System</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Working Model</p>
+          <h1>Employee Reimbursement System</h1>
+          <p class="hero-copy">
+            Submit expense claims, review request status, and approve or reject reimbursements from one dashboard.
+          </p>
+        </div>
+        <button id="refreshButton" class="secondary-button" type="button">Refresh data</button>
+      </section>
+
+      <section class="summary-grid" id="summaryGrid">
+        <article class="summary-card">
+          <span>Total claims</span>
+          <strong id="totalClaims">0</strong>
+        </article>
+        <article class="summary-card">
+          <span>Total amount</span>
+          <strong id="totalAmount">$0.00</strong>
+        </article>
+        <article class="summary-card">
+          <span>Pending</span>
+          <strong id="pendingClaims">0</strong>
+        </article>
+        <article class="summary-card">
+          <span>Approved</span>
+          <strong id="approvedClaims">0</strong>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">New claim</p>
+              <h2>Submit reimbursement request</h2>
+            </div>
+          </div>
+          <form id="claimForm" class="claim-form">
+            <label>
+              Employee name
+              <input name="employeeName" type="text" required />
+            </label>
+            <label>
+              Employee email
+              <input name="employeeEmail" type="email" required />
+            </label>
+            <label>
+              Department
+              <input name="department" type="text" required />
+            </label>
+            <label>
+              Category
+              <select name="category" required>
+                <option value="Travel">Travel</option>
+                <option value="Meals">Meals</option>
+                <option value="Supplies">Supplies</option>
+                <option value="Training">Training</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>
+              Expense date
+              <input name="expenseDate" type="date" required />
+            </label>
+            <label>
+              Amount
+              <input name="amount" type="number" step="0.01" min="0.01" required />
+            </label>
+            <label class="full-width">
+              Description
+              <textarea name="description" rows="4" minlength="10" required></textarea>
+            </label>
+            <div class="form-actions full-width">
+              <button class="primary-button" type="submit">Submit claim</button>
+              <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header panel-header-row">
+            <div>
+              <p class="eyebrow">Claims queue</p>
+              <h2>Review submitted requests</h2>
+            </div>
+            <label class="filter-label">
+              Filter
+              <select id="statusFilter">
+                <option value="">All</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+              </select>
+            </label>
+          </div>
+          <div id="claimsList" class="claims-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
