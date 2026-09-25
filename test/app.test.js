@@ -55,7 +55,7 @@ test('creates and lists reimbursement claims', async () => {
     const listResponse = await fetch(`${harness.baseUrl}/api/claims`);
     const listPayload = await listResponse.json();
 
-    assert.equal(listPayload.claims).not;
+    assert.ok(Array.isArray(listPayload.claims));
     assert.equal(listPayload.claims.length, 1);
     assert.equal(listPayload.claims[0].employeeName, 'Taylor Brooks');
   } finally {
