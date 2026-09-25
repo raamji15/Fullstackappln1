@@ -1,6 +1,25 @@
 const validStatuses = new Set(['pending', 'approved', 'rejected']);
 const validCategories = new Set(['Travel', 'Meals', 'Supplies', 'Training', 'Other']);
 
+function isValidEmail(email) {
+  if (!email || email.includes(' ')) {
+    return false;
+  }
+
+  const atIndex = email.indexOf('@');
+  const lastAtIndex = email.lastIndexOf('@');
+
+  if (atIndex <= 0 || atIndex !== lastAtIndex || atIndex === email.length - 1) {
+    return false;
+  }
+
+  const localPart = email.slice(0, atIndex);
+  const domain = email.slice(atIndex + 1);
+  const dotIndex = domain.indexOf('.');
+
+  return Boolean(localPart) && dotIndex > 0 && dotIndex < domain.length - 1;
+}
+
 function normalizeClaimInput(body = {}) {
   return {
     employeeName: String(body.employeeName || '').trim(),
@@ -20,7 +39,7 @@ function validateClaimInput(input) {
     errors.push('Employee name is required.');
   }
 
-  if (!input.employeeEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.employeeEmail)) {
+  if (!isValidEmail(input.employeeEmail)) {
     errors.push('A valid employee email is required.');
   }
 
