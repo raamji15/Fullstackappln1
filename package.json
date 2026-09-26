@@ -1,0 +1,25 @@
+{
+  "name": "fullstackappln1",
+  "version": "1.0.0",
+  "description": "Employee reimbursement system working model",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://localhost:26831/raamji15/Fullstackappln1"
+  },
+  "keywords": [
+    "express",
+    "reimbursement",
+    "fullstack"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

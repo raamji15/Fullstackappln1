@@ -1,0 +1,43 @@
+{
+  "claims": [
+    {
+      "id": "seed-claim-1",
+      "employeeName": "Anika Sharma",
+      "employeeEmail": "anika.sharma@example.com",
+      "department": "Engineering",
+      "category": "Travel",
+      "expenseDate": "2026-09-10",
+      "amount": 486.45,
+      "description": "Client visit travel and local transport expenses.",
+      "status": "pending",
+      "submittedAt": "2026-09-11T09:00:00.000Z",
+      "reviewedAt": null
+    },
+    {
+      "id": "seed-claim-2",
+      "employeeName": "Marcus Lee",
+      "employeeEmail": "marcus.lee@example.com",
+      "department": "Operations",
+      "category": "Supplies",
+      "expenseDate": "2026-09-08",
+      "amount": 129.99,
+      "description": "Printer cartridges and office stationery replenishment.",
+      "status": "approved",
+      "submittedAt": "2026-09-09T13:30:00.000Z",
+      "reviewedAt": "2026-09-10T08:15:00.000Z"
+    },
+    {
+      "id": "seed-claim-3",
+      "employeeName": "Priya Nair",
+      "employeeEmail": "priya.nair@example.com",
+      "department": "Finance",
+      "category": "Meals",
+      "expenseDate": "2026-09-05",
+      "amount": 68.2,
+      "description": "Team working lunch during quarterly planning workshop.",
+      "status": "rejected",
+      "submittedAt": "2026-09-06T10:45:00.000Z",
+      "reviewedAt": "2026-09-07T15:00:00.000Z"
+    }
+  ]
+}
